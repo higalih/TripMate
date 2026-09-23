@@ -1,0 +1,13 @@
+from pathlib import Path
+import traceback
+
+import uvicorn
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse, HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+from pydantic import BaseModel, Field
+
+from backend import run_travel_agent, resume_travel_agent
+
+BASE_DIR = Path(__file__).resolve().parent
